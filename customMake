@@ -1,0 +1,10 @@
+ARCH := arm
+CROSS_COMPILE := arm-none-linux-gnueabi-
+obj-m := Hello.o
+KDIR := /home/ravi/workspace/hawk/linux-omapl1
+PWD := $(shell pwd)
+export
+default:
+          $(MAKE) -C $(KDIR) M=$(PWD) modules
+clean:
+          $(MAKE) -C $(KDIR) M=$(PWD) clean
